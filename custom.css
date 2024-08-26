@@ -9,3 +9,64 @@
         opacity: 0;
     }
 }
+#scrollBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position at the bottom-right */
+    bottom: 20px; /* Distance from the bottom */
+    right: 30px; /* Distance from the right */
+    z-index: 99; /* Ensure the button is on top */
+    font-size: 18px; /* Font size */
+    border: none; /* No border */
+    outline: none; /* No outline */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 15px; /* Padding */
+    border-radius: 50%; /* Rounded button */
+}
+
+#scrollBtn:hover {
+    background-color: #05e2ff; /* Darker background on hover */
+}
+ /* WhatsApp Button Styling */
+#whatsappBtn {
+    position: fixed; /* Fixed position on the screen */
+    bottom: 20px; /* Distance from the bottom */
+    left: 30px; /* Distance from the left */
+    z-index: 100; /* Ensure the button is on top */
+    background-color: #25d366; /* WhatsApp green color */
+    color: white; /* Text color */
+    padding: 10px; /* Padding */
+    border-radius: 50%; /* Rounded button */
+    font-size: 20px; /* Font size */
+    display: flex; /* Flexbox to align icon */
+    align-items: center; /* Center alignment */
+    justify-content: center; /* Center alignment */
+    text-decoration: none; /* Remove underline */
+}
+
+#whatsappBtn img {
+    width: 32px; /* Adjust icon size */
+    height: 32px; /* Adjust icon size */
+}
+
+/* Hover effect */
+#whatsappBtn:hover {
+    background-color: #128c7e; /* Darker WhatsApp color on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #whatsappBtn {
+        width: 45px; /* Smaller button width */
+        height: 45px; /* Smaller button height */
+        bottom: 15px; /* Adjust distance from the bottom */
+        left: 15px; /* Adjust distance from the left */
+        padding: 5px; /* Smaller padding */
+    }
+
+    #whatsappBtn img {
+        width: 24px; /* Smaller icon size */
+        height: 24px; /* Smaller icon size */
+    }
+}
