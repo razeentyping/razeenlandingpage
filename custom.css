@@ -28,45 +28,86 @@
 #scrollBtn:hover {
     background-color: #05e2ff; /* Darker background on hover */
 }
- /* WhatsApp Button Styling */
+/* Base button styling */
+.fixed-button {
+    position: fixed;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 0; /* Square shape */
+    transition: all 0.3s ease;
+}
+
+/* Specific button styles */
+#callBtn {
+    background-color: #007bff; /* Blue color */
+    left: 0; /* Fixed position from the left */
+    bottom: 100px; /* Adjust this value to position the button from the bottom */
+}
+
 #whatsappBtn {
-    position: fixed; /* Fixed position on the screen */
-    bottom: 20px; /* Distance from the bottom */
-    left: 30px; /* Distance from the left */
-    z-index: 100; /* Ensure the button is on top */
-    background-color: #25d366; /* WhatsApp green color */
-    color: white; /* Text color */
-    padding: 10px; /* Padding */
-    border-radius: 50%; /* Rounded button */
-    font-size: 20px; /* Font size */
-    display: flex; /* Flexbox to align icon */
-    align-items: center; /* Center alignment */
-    justify-content: center; /* Center alignment */
-    text-decoration: none; /* Remove underline */
+    background-color: #25d366; /* WhatsApp green */
+    left: 0; /* Fixed position from the left */
+    bottom: 50px; /* Adjust this value to position the button from the bottom */
 }
 
-#whatsappBtn img {
-    width: 32px; /* Adjust icon size */
-    height: 32px; /* Adjust icon size */
+#locationBtn {
+    background-color: #ff5722; /* Orange color */
+    left: 0; /* Fixed position from the left */
+    bottom: 0; /* Adjust this value to position the button from the bottom */
 }
 
-/* Hover effect */
-#whatsappBtn:hover {
-    background-color: #128c7e; /* Darker WhatsApp color on hover */
+#toggleBtn {
+    position: fixed;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #343a40; /* Dark color for toggle button */
+    left: 0; /* Fixed position from the left */
+    bottom: 150px; /* Adjusted to be on top of contact buttons */
+    border-radius: 0; /* Square shape */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Responsive design */
+#toggleBtn .toggle-icon {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow icon when buttons are hidden */
+#toggleBtn.hide .toggle-icon {
+    transform: rotate(90deg); /* Rotate right when hidden */
+}
+
+/* Hide buttons initially */
+.fixed-button.hide {
+    display: none;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    #whatsappBtn {
-        width: 45px; /* Smaller button width */
-        height: 45px; /* Smaller button height */
-        bottom: 15px; /* Adjust distance from the bottom */
-        left: 15px; /* Adjust distance from the left */
-        padding: 5px; /* Smaller padding */
+    .fixed-button {
+        width: 40px;
+        height: 40px;
     }
 
-    #whatsappBtn img {
-        width: 24px; /* Smaller icon size */
-        height: 24px; /* Smaller icon size */
+    .fixed-button img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #toggleBtn {
+        width: 40px;
+        height: 40px;
     }
 }
