@@ -12,8 +12,8 @@
 #scrollBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed position at the bottom-right */
-    bottom: 20px; /* Distance from the bottom */
-    right: 30px; /* Distance from the right */
+    bottom: 40px; /* Distance from the bottom */
+    right: 5px; /* Distance from the right */
     z-index: 99; /* Ensure the button is on top */
     font-size: 18px; /* Font size */
     border: none; /* No border */
