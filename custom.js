@@ -16,27 +16,23 @@
  }
  
 
-document.addEventListener('DOMContentLoaded', function () {
+ document.addEventListener("DOMContentLoaded", function() {
+    // Initially show the icons
+    const iconBox = document.querySelector('.icon-box');
     const toggleBtn = document.getElementById('toggleBtn');
-    const callBtn = document.getElementById('callBtn');
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    const locationBtn = document.getElementById('locationBtn');
+    const iconButtons = document.querySelectorAll('.fixed-button:not(#toggleBtn)');
+    const toggleIcon = document.querySelector('.toggle-icon');
 
-    // Initialize the state
-    let isVisible = true;
+    iconBox.style.display = 'flex'; // Show the icons on page load
 
-    toggleBtn.addEventListener('click', function () {
-        if (isVisible) {
-            callBtn.classList.add('hide');
-            whatsappBtn.classList.add('hide');
-            locationBtn.classList.add('hide');
-            toggleBtn.querySelector('.toggle-icon').textContent = '➡️'; // Update the arrow icon
+    toggleBtn.addEventListener('click', function() {
+        if (iconButtons[0].style.display !== 'none') {
+            iconButtons.forEach(button => button.style.display = 'none'); // Hide all icons except the toggle button
+            toggleIcon.textContent = '➡️'; // Change the arrow to right
         } else {
-            callBtn.classList.remove('hide');
-            whatsappBtn.classList.remove('hide');
-            locationBtn.classList.remove('hide');
-            toggleBtn.querySelector('.toggle-icon').textContent = '⬅️'; // Update the arrow icon
+            iconButtons.forEach(button => button.style.display = 'block'); // Show all icons
+            toggleIcon.textContent = '⬅️'; // Change the arrow to left
         }
-        isVisible = !isVisible;
     });
 });
+

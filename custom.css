@@ -29,85 +29,50 @@
     background-color: #05e2ff; /* Darker background on hover */
 }
 /* Base button styling */
-.fixed-button {
+.icon-box {
     position: fixed;
-    z-index: 100;
-    width: 50px;
-    height: 50px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    border-radius: 0; /* Square shape */
-    transition: all 0.3s ease;
+    flex-direction: column;
+    top: 150px;
+    left: 20px;
+    z-index: 1000;
+    background-color: #e9e8e8;
 }
 
-/* Specific button styles */
-#callBtn {
-    background-color: #007bff; /* Blue color */
-    left: 0; /* Fixed position from the left */
-    bottom: 100px; /* Adjust this value to position the button from the bottom */
+.fixed-button {
+    margin: 10px 0;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
-#whatsappBtn {
-    background-color: #25d366; /* WhatsApp green */
-    left: 0; /* Fixed position from the left */
-    bottom: 50px; /* Adjust this value to position the button from the bottom */
-}
-
-#locationBtn {
-    background-color: #ff5722; /* Orange color */
-    left: 0; /* Fixed position from the left */
-    bottom: 0; /* Adjust this value to position the button from the bottom */
+.fixed-button img {
+    display: block;
+    margin: 0 auto;
 }
 
 #toggleBtn {
-    position: fixed;
-    z-index: 100;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #343a40; /* Dark color for toggle button */
-    left: 0; /* Fixed position from the left */
-    bottom: 150px; /* Adjusted to be on top of contact buttons */
-    border-radius: 0; /* Square shape */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
 }
 
-#toggleBtn .toggle-icon {
-    font-size: 24px;
-    color: white;
-    transition: transform 0.3s ease;
-}
-
-/* Rotate arrow icon when buttons are hidden */
-#toggleBtn.hide .toggle-icon {
-    transform: rotate(90deg); /* Rotate right when hidden */
-}
-
-/* Hide buttons initially */
-.fixed-button.hide {
-    display: none;
-}
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
-    .fixed-button {
-        width: 40px;
-        height: 40px;
+    .icon-box {
+        flex-direction: row;
+        bottom: 20px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .fixed-button img {
-        width: 20px;
-        height: 20px;
+    .fixed-button {
+        margin: 0 10px;
     }
 
     #toggleBtn {
-        width: 40px;
-        height: 40px;
+        margin-bottom: 0;
+        margin-right: 15px;
     }
 }
+
