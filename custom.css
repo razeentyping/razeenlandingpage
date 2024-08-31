@@ -1,3 +1,9 @@
+.logotop{
+    width: 100px;
+    height: 75px;
+    border-radius: 5px;
+}
+
 .blinking-text {
     font-size: 24px;
     color: red;
@@ -22,7 +28,7 @@
     color: white; /* Text color */
     cursor: pointer; /* Pointer cursor on hover */
     padding: 15px; /* Padding */
-    border-radius: 50%; /* Rounded button */
+    border-radius:50% 50% 0 0 ; /* Rounded button */
 }
 
 #scrollBtn:hover {
