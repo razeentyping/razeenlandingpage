@@ -80,5 +80,15 @@
         margin-bottom: 0;
         margin-right: 15px;
     }
+    .iframe{
+        max-width: 500px;
+        overflow: hidden;
+    }
+
+    /* #copyright{
+        position: absolute;
+        right: 5px;
+    } */
+
 }
 
