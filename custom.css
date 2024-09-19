@@ -60,7 +60,9 @@ h1, h2, h3{
     }
 }
 
-
+ul.text-white {
+    padding-left: 15px;
+}
 
 .fixed-top {
     position: fixed;
@@ -81,20 +83,21 @@ body {
     }
 }
 #scrollBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed position at the bottom-right */
-    bottom: 40px; /* Distance from the bottom */
-    right: 5px; /* Distance from the right */
-    z-index: 99; /* Ensure the button is on top */
-    font-size: 18px; /* Font size */
-    border: none; /* No border */
-    outline: none; /* No outline */
-    background-color: #007bff; /* Button color */
-    color: white; /* Text color */
-    cursor: pointer; /* Pointer cursor on hover */
-    padding: 15px; /* Padding */
-    border-radius:50% 50% 0 0 ; /* Rounded button */
-}
+    display: none;
+    position: fixed;
+    bottom: 74px;
+    right: 4px;
+    z-index: 99;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 35px;
+    height: 34px;
+  }
 
 #scrollBtn:hover {
     background-color: #05e2ff; /* Darker background on hover */
@@ -104,12 +107,26 @@ body {
     position: fixed;
     display: flex;
     flex-direction: column;
-    top: 150px;
-    left: 20px;
+    top: 30%;
+    right: 0px;
     z-index: 1000;
-    background-color: #d3d3d3;
+    background-color: #3d4fae;
+    padding: 10px;
+    border-radius: 14px 0 0 14px;
+  }
+.card-title span{
+    font-size: 15px;
 }
-
+ul{
+    padding-left: 15px;
+}
+.card-title {
+    font-size: 22px;
+    font-weight: 800;
+    padding-bottom: 5px;
+    color: #006fa4;
+    font-family: "Raleway", sans-serif;
+  }
 .fixed-button {
     margin: 10px 0;
     background-color: #fff;
@@ -155,8 +172,12 @@ a.anchor{
         top: auto;
         left: 50%;
         transform: translateX(-50%);
+        border-radius: 14px 14px  0 0 ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-
+ 
     .fixed-button {
         margin: 0 10px;
     }
@@ -169,3 +190,18 @@ a.anchor{
 
 }
 
+
+@media (max-width: 560px) {
+    .icon-box {
+        flex-direction: row;
+        bottom: 0px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 14px 14px  0 0 ;
+        width: 100%;
+        display: flex;
+  align-items: center;
+  justify-content: center;
+    }
+}
