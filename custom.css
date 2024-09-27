@@ -7,7 +7,7 @@
     border-radius: 5px;
 }
 
- header.bg-success , div.bg-success{
+ header.bg-color1 , div.bg-color1{
     background-color: #00466e !important;
 }
 h1 span.text-primary{
@@ -51,7 +51,7 @@ h1, h2, h3{
 }
 
 button.accordion-button{
-    
+
 }
 footer.bg-dark{
     background-color:rgb(117 126 121) !important ;
