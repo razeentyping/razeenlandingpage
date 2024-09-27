@@ -6,6 +6,16 @@
     height: 75px;
     border-radius: 5px;
 }
+
+ header.bg-success , div.bg-success{
+    background-color: #00466e !important;
+}
+h1 span.text-primary{
+    color: rgb(117 126 121) !important;
+}
+h1 span.welcome-color{
+    color: #00466e;
+}
 h1, h2, h3{
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -38,6 +48,13 @@ h1, h2, h3{
 }
 .img .round{
     border-radius: 50%;
+}
+
+button.accordion-button{
+    
+}
+footer.bg-dark{
+    background-color:rgb(117 126 121) !important ;
 }
 
 /* Keyframes for sliding in and out */
