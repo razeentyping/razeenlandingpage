@@ -58,3 +58,9 @@ html {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+.tabs-container {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
+}
