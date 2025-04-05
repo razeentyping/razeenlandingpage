@@ -1,0 +1,60 @@
+
+/* Smooth transition for navbar */
+.nav-scroll {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*about animation*/
+
+
+  .slide-in-left {
+    animation: slideInLeft 0.7s ease-out forwards;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.7s ease-out forwards;
+  }
+
+  @keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+  }
+
+
+
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.logo-slider {
+    display: flex;
+    width: max-content;
+    animation: scroll 15s linear infinite;
+}
+
+/* Pause scrolling when hovered */
+.logo-wrapper:hover .logo-slider {
+    animation-play-state: paused;
+}
+
+/* Hide scrollbar for clean look */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
