@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
     let totalTabs = tabs.length;
     let autoScroll;
-    let scrollTime = 7000; // Default: 7 seconds per tab
+    let scrollTime = 10000; // Default: 7 seconds per tab
 
     function switchTab(index) {
         let selectedCategory = tabs[index].getAttribute("data-category");
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
             stopAutoScroll(); // Pause auto-scroll when clicked
             currentIndex = index;
             switchTab(index);
-            setTimeout(startAutoScroll, 10000); // Resume auto-scroll after 10 seconds
+            setTimeout(startAutoScroll, 15000); // Resume auto-scroll after 10 seconds
         });
     });
 
