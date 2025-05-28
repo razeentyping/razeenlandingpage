@@ -46,73 +46,73 @@
     });
 
     
-//auto scroll service 
+// //auto scroll service 
 
-document.addEventListener("DOMContentLoaded", function () {
-    let tabs = document.querySelectorAll(".tab-btn"); // Tab buttons
-    let cards = document.querySelectorAll(".service-card"); // Service cards
-    let currentIndex = 0;
-    let totalTabs = tabs.length;
-    let autoScroll;
-    let scrollTime = 10000; // Default: 7 seconds per tab
+// document.addEventListener("DOMContentLoaded", function () {
+//     let tabs = document.querySelectorAll(".tab-btn"); // Tab buttons
+//     let cards = document.querySelectorAll(".service-card"); // Service cards
+//     let currentIndex = 0;
+//     let totalTabs = tabs.length;
+//     let autoScroll;
+//     let scrollTime = 20000; // Default: 7 seconds per tab
 
-    function switchTab(index) {
-        let selectedCategory = tabs[index].getAttribute("data-category");
+//     function switchTab(index) {
+//         let selectedCategory = tabs[index].getAttribute("data-category");
 
-        // Update tabs active state
-        tabs.forEach(tab => {
-            tab.classList.remove("bg-teal-700", "text-white");
-            tab.classList.add("bg-gray-200", "text-gray-600");
-        });
+//         // Update tabs active state
+//         tabs.forEach(tab => {
+//             tab.classList.remove("bg-teal-700", "text-white");
+//             tab.classList.add("bg-gray-200", "text-gray-600");
+//         });
 
-        tabs[index].classList.add("bg-teal-700", "text-white");
-        tabs[index].classList.remove("bg-gray-200", "text-gray-600");
+//         tabs[index].classList.add("bg-teal-700", "text-white");
+//         tabs[index].classList.remove("bg-gray-200", "text-gray-600");
 
-        // Animate cards (Fade In + Scale)
-        cards.forEach(card => {
-            if (card.getAttribute("data-category") === selectedCategory) {
-                card.style.display = "block";
-                card.style.opacity = 0;
-                card.style.transform = "scale(0.95)";
-                setTimeout(() => {
-                    card.style.transition = "all 0.5s ease";
-                    card.style.opacity = 1;
-                    card.style.transform = "scale(1)";
-                }, 50);
-            } else {
-                card.style.display = "none";
-                card.style.opacity = 0;
-            }
-        });
-    }
+//         // Animate cards (Fade In + Scale)
+//         cards.forEach(card => {
+//             if (card.getAttribute("data-category") === selectedCategory) {
+//                 card.style.display = "block";
+//                 card.style.opacity = 0;
+//                 card.style.transform = "scale(0.95)";
+//                 setTimeout(() => {
+//                     card.style.transition = "all 0.5s ease";
+//                     card.style.opacity = 1;
+//                     card.style.transform = "scale(1)";
+//                 }, 50);
+//             } else {
+//                 card.style.display = "none";
+//                 card.style.opacity = 0;
+//             }
+//         });
+//     }
 
-    function autoSwitch() {
-        currentIndex = (currentIndex + 1) % totalTabs;
-        switchTab(currentIndex);
-    }
+//     function autoSwitch() {
+//         currentIndex = (currentIndex + 1) % totalTabs;
+//         switchTab(currentIndex);
+//     }
 
-    function startAutoScroll() {
-        let calculatedTime = totalTabs > 5 ? scrollTime + 2000 : scrollTime; // If more than 5 tabs, increase scroll time
-        autoScroll = setInterval(autoSwitch, calculatedTime);
-    }
+//     function startAutoScroll() {
+//         let calculatedTime = totalTabs > 5 ? scrollTime + 2000 : scrollTime; // If more than 5 tabs, increase scroll time
+//         autoScroll = setInterval(autoSwitch, calculatedTime);
+//     }
 
-    function stopAutoScroll() {
-        clearInterval(autoScroll);
-    }
+//     function stopAutoScroll() {
+//         clearInterval(autoScroll);
+//     }
 
-    tabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => {
-            stopAutoScroll(); // Pause auto-scroll when clicked
-            currentIndex = index;
-            switchTab(index);
-            setTimeout(startAutoScroll, 15000); // Resume auto-scroll after 10 seconds
-        });
-    });
+//     tabs.forEach((tab, index) => {
+//         tab.addEventListener("click", () => {
+//             stopAutoScroll(); // Pause auto-scroll when clicked
+//             currentIndex = index;
+//             switchTab(index);
+//             setTimeout(startAutoScroll, 15000); // Resume auto-scroll after 10 seconds
+//         });
+//     });
 
-    // Initialize first tab
-    switchTab(0);
-    startAutoScroll();
-});
+//     // Initialize first tab
+//     switchTab(0);
+//     startAutoScroll();
+// });
 // logo scroll
 
 document.addEventListener("DOMContentLoaded", function () {
