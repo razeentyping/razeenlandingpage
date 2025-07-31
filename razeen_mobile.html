@@ -15,7 +15,7 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a2a6c, #2c3e50);
+            background: linear-gradient(180deg, #000000, #003088,  #001e55);
             color: #fff;
             min-height: 100vh;
             display: flex;
@@ -43,12 +43,18 @@
         }
         
         .header {
-            margin-bottom: 20px;
             position: relative;
+            background-image: url('img1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            overflow: hidden;
+            padding: 20px 0;
         }
-        
+
         .logo {
             margin: 15px 0;
+            margin-top: 105px;
             text-align: center;
             position: relative;
             animation: scaleUp 0.6s 0.3s both;
@@ -65,7 +71,7 @@
             letter-spacing: 1px;
             margin-bottom: 8px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            background: linear-gradient(to right, #4CAF50, #8BC34A);
+            background: linear-gradient(to right, #ffffff, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -81,14 +87,15 @@
         }
         
         .tagline {
-            background: rgba(76, 175, 80, 0.2);
+            /* background: rgba(76, 175, 80, 0.2); */
+            margin-top: 35px;
             padding: 8px 15px;
             border-radius: 50px;
-            margin: 12px auto;
+            /* margin: 12px auto; */
             display: inline-block;
             font-weight: 500;
             font-size: clamp(0.85rem, 3.2vw, 0.95rem);
-            border: 1px solid rgba(76, 175, 80, 0.4);
+            /* border: 1px solid rgba(7, 126, 46, 0.4); */
         }
         
         .location {
@@ -100,7 +107,7 @@
         
         .divider {
             height: 3px;
-            background: linear-gradient(to right, transparent, #4CAF50, transparent);
+            background: linear-gradient(to right, transparent, #ffffff, transparent);
             margin: 20px auto;
             width: 80%;
             border-radius: 2px;
@@ -576,6 +583,123 @@
             z-index: 20;
         }
         
+        /* Service Detail Modal */
+        .service-detail-modal {
+            display: none;
+        }
+        
+        .service-modal-content {
+            background: linear-gradient(135deg, #1a2a6c, #2a5298);
+            border-radius: 18px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            animation: modalIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            transform: scale(0.9);
+            opacity: 0;
+            margin: 15px;
+        }
+        
+        .service-modal-header {
+            padding: 20px 20px 15px;
+            text-align: center;
+            position: relative;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-modal-icon {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        
+        .service-modal-header h2 {
+            font-size: clamp(1.5rem, 5vw, 1.8rem);
+            color: #FFD700;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .service-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+        
+        .service-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        
+        .service-features {
+            margin-top: 20px;
+        }
+        
+        .service-features h4 {
+            font-size: 1.1rem;
+            color: #4CAF50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .service-features ul {
+            padding-left: 25px;
+        }
+        
+        .service-features li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #ccc;
+            position: relative;
+        }
+        
+        .service-features li::before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+        
+        .service-contact {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            border-left: 3px solid #4CAF50;
+        }
+        
+        .service-contact p {
+            margin-bottom: 10px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(76, 175, 80, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 10px;
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: rgba(76, 175, 80, 0.3);
+            transform: scale(1.05);
+        }
+        
         /* Responsive table for mobile */
         @media (max-width: 768px) {
             .timetable {
@@ -587,107 +711,75 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* Opening status indicator */
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            margin: 8px 0;
+            font-size: 0.9rem;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .open-status {
+            background: rgba(9, 252, 17, 0.2);
+            color: #06e2ff;
+        }
+        
+        .closed-status {
+            background: rgba(255, 87, 87, 0.2);
+            color: #ff5757;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .open-dot {
+            background: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.7);
+        }
+        
+        .closed-dot {
+            background: #ff5757;
+            box-shadow: 0 0 8px rgba(255, 87, 87, 0.7);
+        }
+        
+        .status-message {
+            font-size: 0.85rem;
+            margin-top: 5px;
+            color: #c8ff00;
+        }
 
-   /* WhatsApp Development Button */
-/* .dev-whatsapp {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-} */
-
-/* .dev-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 70px;
-    background-color: #25D366;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: white;
-    font-size: 2.2rem;
-    position: relative;
-    animation: pulse 2s infinite;
-}
-
-.dev-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    background-color: #128C7E;
-} */
-
-/* .dev-label {
-    background: rgba(255, 255, 255, 0.9);
-    color: #075E54;
-    padding: 8px 15px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 15px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.dev-label i {
-    color: #25D366;
-    font-size: 1.2rem;
-} */
-
-/* @keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
-} */
-
-/* Responsive adjustments */
-/* @media (max-width: 768px) {
-    .dev-whatsapp {
-        top: 15px;
-        right: 15px;
-    }
-    
-    .dev-btn {
-        width: 60px;
-        height: 60px;
-        font-size: 1.8rem;
-    }
-    
-    .dev-label {
-        font-size: 0.85rem;
-        padding: 6px 12px;
-    }
-} */
-
-/* @media (max-width: 480px) {
-    .dev-whatsapp {
-        top: 10px;
-        right: 10px;
-    }
-    
-    .dev-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.6rem;
-    }
-    
-    .dev-label {
-        font-size: 0.8rem;
-    }
-} */
+        /* Timetable status bar */
+        .timetable-status-bar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .timetable-status-bar.closed {
+            border-left-color: #ff5757;
+        }
+        
+        .timetable-status-bar h3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
@@ -700,19 +792,24 @@
     <div id="homePage" class="container">
         <div class="header">
             <div class="logo">
-                <h1>RAZEEN  <br /> TYPING & STUDIO</h1>
-                <!-- <p>Customized Services to Meet Every Requirement</p> -->
-                <div class="location">Musaffah ME 10, Abu Dhabi, UAE</div>
+                <!-- <h1>RAZEEN  <br /> TYPING & STUDIO</h1> -->
+                <!-- <div class="location">Musaffah ME 10, Abu Dhabi, UAE</div> -->
                 <div class="tagline">Customized Services to Meet Every Requirement</div>
+                
+                <!-- Status indicator -->
+                <div id="statusIndicator" class="status-indicator open-status">
+                    <span class="status-dot open-dot"></span>
+                    <span>Open now</span>
+                </div>
+                <div id="statusMessage" class="status-message">Closes at 9:30 PM today</div>
             </div>
         </div>
         
         <div class="divider"></div>
         
         <div class="links-container">
-
-<!-- WhatsApp -->
-            <div class="link-card" onclick="window.open('https://wa.me/00971559676488', '_blank')">
+            <!-- WhatsApp -->
+            <div class="link-card" onclick="window.open('https://wa.me/971559676488?text=Hello!', '_blank')">
                 <div class="link-icon">
                     <i class="fab fa-whatsapp"></i>
                 </div>
@@ -755,8 +852,6 @@
                 </div>
             </div>
             
-            
-            
             <!-- Website -->
             <div class="link-card" onclick="window.open('https://razeentyping.com', '_blank')">
                 <div class="link-icon">
@@ -769,7 +864,7 @@
             </div>
 
             <!-- Instagram -->
-            <div class="link-card opacity-0 -translate-x-5 animate-slideIn" style="animation-delay: 0.8s" onclick="window.open('https://l.instagram.com/?u=https%3A%2F%2Fwww.instagram.com%2Frazeentyping%3Figsh%3DMWhmeWExY28yanNhaQ%253D%253D%26fbclid%3DPAZXh0bgNhZW0CMTEAAaeM5k2GYHpEc92yd8jd7Zm2Ojq7uNremkkIoeddGIhr4UfbK5JSdTgEA5Q2yA_aem_mcagTCnfo_KmtBDowjoyzg&e=AT0Oe0PNzTslnQdLEHTdNnlP25Ehd1t7TyqOBqqb8PIKT1d5Qo4bvk1Woz1P3zWy2LPe8F2gQNBdGqaf7PmroGMuxttTaIJmM_QketKx_YyPcwMg9Zm83h4', '_blank')">
+            <div class="link-card" onclick="window.open('https://l.instagram.com/?u=https%3A%2F%2Fwww.instagram.com%2Frazeentyping%3Figsh%3DMWhmeWExY28yanNhaQ%253D%253D%26fbclid%3DPAZXh0bgNhZW0CMTEAAaeM5k2GYHpEc92yd8jd7Zm2Ojq7uNremkkIoeddGIhr4UfbK5JSdTgEA5Q2yA_aem_mcagTCnfo_KmtBDowjoyzg&e=AT0Oe0PNzTslnQdLEHTdNnlP25Ehd1t7TyqOBqqb8PIKT1d5Qo4bvk1Woz1P3zWy2LPe8F2gQNBdGqaf7PmroGMuxttTaIJmM_QketKx_YyPcwMg9Zm83h4', '_blank')">
                 <div class="link-icon">
                     <i class="fab fa-instagram"></i>
                 </div>
@@ -779,8 +874,8 @@
                 </div>
             </div>
 
-<!-- Facebook -->
-            <div class="link-card opacity-0 -translate-x-5 animate-slideIn" style="animation-delay: 0.9s" onclick="window.open('#', '_blank')">
+            <!-- Facebook -->
+            <div class="link-card" onclick="window.open('https://www.facebook.com/profile.php?id=61578635430947', '_blank')">
                 <div class="link-icon">
                     <i class="fab fa-facebook-f"></i>
                 </div>
@@ -788,12 +883,8 @@
                     <h3>Facebook</h3>
                     <p>Connect with us</p>
                 </div>
-                </div>
-
+            </div>
         </div>
-        
-        
-        
         
         <div class="footer">
             <a href="https://razeentyping.com" class="website-link">www.razeentyping.com</a>
@@ -807,6 +898,16 @@
             <i class="fas fa-arrow-left"></i>
         </div>
         <h2>Opening Hours</h2>
+        
+        <!-- Status bar for timetable page -->
+        <div id="timetableStatusBar" class="timetable-status-bar">
+            <h3>
+                <span class="status-dot open-dot"></span>
+                <span>Open now</span>
+            </h3>
+            <p>Closes at 9:30 PM today</p>
+        </div>
+        
         <table class="timetable">
             <thead>
                 <tr>
@@ -854,7 +955,7 @@
         </div>
         <h2>Our Services</h2>
         <div class="service-list">
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(0)">
                 <div class="service-icon">
                     <i class="fas fa-passport"></i>
                 </div>
@@ -862,7 +963,7 @@
                 <p>All Ministry of Labour services</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(1)">
                 <div class="service-icon">
                     <i class="fas fa-users"></i>
                 </div>
@@ -870,7 +971,7 @@
                 <p>Family visa processing assistance</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(2)">
                 <div class="service-icon">
                     <i class="fas fa-id-card"></i>
                 </div>
@@ -878,7 +979,7 @@
                 <p>Emirates ID application & renewal</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(3)">
                 <div class="service-icon">
                     <i class="fas fa-building"></i>
                 </div>
@@ -886,7 +987,7 @@
                 <p>Government service center assistance</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(4)">
                 <div class="service-icon">
                     <i class="fas fa-file-alt"></i>
                 </div>
@@ -894,7 +995,7 @@
                 <p>Security pass typing</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(5)">
                 <div class="service-icon">
                     <i class="fas fa-globe"></i>
                 </div>
@@ -902,7 +1003,7 @@
                 <p>Online visa processing services</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(6)">
                 <div class="service-icon">
                     <i class="fas fa-language"></i>
                 </div>
@@ -910,7 +1011,7 @@
                 <p>Professional translation services</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(7)">
                 <div class="service-icon">
                     <i class="fas fa-certificate"></i>
                 </div>
@@ -918,7 +1019,7 @@
                 <p>Marriage, Birth & Education certificates</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(8)">
                 <div class="service-icon">
                     <i class="fas fa-file-contract"></i>
                 </div>
@@ -926,7 +1027,7 @@
                 <p>New / Renewal / Amendment</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(9)">
                 <div class="service-icon">
                     <i class="fas fa-envelope"></i>
                 </div>
@@ -934,7 +1035,7 @@
                 <p>Arabic & English official letters</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(10)">
                 <div class="service-icon">
                     <i class="fas fa-car"></i>
                 </div>
@@ -942,7 +1043,7 @@
                 <p>Mulkia, Driving License, Permits</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(11)">
                 <div class="service-icon">
                     <i class="fas fa-heartbeat"></i>
                 </div>
@@ -950,7 +1051,7 @@
                 <p>Company, Family, Domestic, Aounak</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(12)">
                 <div class="service-icon">
                     <i class="fas fa-gavel"></i>
                 </div>
@@ -958,7 +1059,7 @@
                 <p> moi case filing assistance</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(13)">
                 <div class="service-icon">
                     <i class="fas fa-handshake"></i>
                 </div>
@@ -966,7 +1067,7 @@
                 <p>Power of Attorney services</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(14)">
                 <div class="service-icon">
                     <i class="fas fa-fire-extinguisher"></i>
                 </div>
@@ -974,12 +1075,44 @@
                 <p>Company, Vehicle, Hasantuk</p>
             </div>
             
-            <div class="service-card">
+            <div class="service-card" onclick="showServiceDetail(15)">
                 <div class="service-icon">
                     <i class="fas fa-laptop"></i>
                 </div>
                 <h3>Tamm Services</h3>
                 <p>Government digital services</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Service Detail Modal -->
+    <div id="serviceModal" class="modal service-detail-modal">
+        <div class="service-modal-content">
+            <div class="service-modal-header">
+                <div class="service-modal-icon" id="modalIcon"></div>
+                <h2 id="modalTitle">Service Title</h2>
+            </div>
+            <div class="service-modal-body">
+                <div class="service-description" id="modalDescription">
+                    Detailed service description will appear here.
+                </div>
+                
+                <div class="service-features">
+                    <h4><i class="fas fa-check-circle"></i> Key Features</h4>
+                    <ul id="modalFeatures">
+                        <!-- Features will be added here -->
+                    </ul>
+                </div>
+                
+                <div class="service-contact">
+                    <p>Need this service? Contact us now!</p>
+                    <a href="https://wa.me/971559676488?text=Hi%20Razeen%20Typing!" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="close-modal" onclick="closeServiceModal()">
+                <i class="fas fa-times"></i>
             </div>
         </div>
     </div>
@@ -999,25 +1132,220 @@
                 <i class="fas fa-clock"></i>
                 <span>Hours</span>
             </a>
-            <a class="nav-btn" onclick="window.open('https://wa.me/00971559676488', '_blank')">
+            <a class="nav-btn" onclick="window.open('https://wa.me/971559676488?text=Hi%20Razeen%20Typing!', '_blank')">
                 <i class="fab fa-whatsapp"></i>
                 <span>Chat</span>
             </a>
         </div>
     </div>
-
- <!-- WhatsApp Development Button -->
-<!-- <div class="dev-whatsapp">
-    <div class="dev-label">
-        <i class="fas fa-laptop-code"></i>
-        Want this website?
-    </div>
-    <a href="https://wa.me/00971559676488" class="dev-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-</div> -->
     
     <script>
+        // Service details data
+        const serviceDetails = [
+            {
+                title: "Ministry of Labour",
+                icon: "fas fa-passport",
+                description: "Comprehensive assistance with all Ministry of Labour services including work permits, labor contracts, employment visas, and labor card services. Our experts ensure compliance with UAE labor regulations for seamless processing.",
+                features: [
+                    "Work permit processing",
+                    "Labor contract typing",
+                    "Tawjeeh Class",
+                    "Labor card issuance and renewal",
+                    "Labor card cancellation",
+                    
+                ]
+            },
+            {
+                title: "Family Visa Typing",
+                icon: "fas fa-users",
+                description: "Complete family visa processing assistance including application preparation, document collection, Emirates ID processing. We handle all formalities for spouse, children, and dependent visas.",
+                features: [
+                    "Family visa application preparation",
+                    "Document collection and verification",
+                    "Emirates ID processing",
+                    "Visa stamping assistance",
+                    "Status tracking services",
+                    "Residency permit renewal"
+                ]
+            },
+            {
+                title: "Emirates ID",
+                icon: "fas fa-id-card",
+                description: "Professional assistance with Emirates ID applications, renewals, replacements, and modifications and delivery coordination.",
+                features: [
+                    "New Emirates ID applications",
+                    "ID renewal services",
+                    "Lost/damaged ID replacement",
+                    "Delivery coordination",
+                    "Status tracking"
+                ]
+            },
+            {
+                title: "Tasheel Services",
+                icon: "fas fa-building",
+                description: "Comprehensive support for all Tasheel (government service center)  labor services",
+                features: [
+                    
+                    "new labor visa process ",
+                    "Labor contract typing",
+                    "Company updation",
+                    "Other related works",
+                    
+                    
+                ]
+            },
+            {
+                title: "CICPA Pass Typing",
+                icon: "fas fa-file-alt",
+                description: "Professional typing services for CICPA (Critical Infrastructure and Coastal Protection Authority) security passes required for access to sensitive areas in Abu Dhabi.",
+                features: [
+                    "Cicpa regeistration",
+                    "New pass application",
+                    "Pass renewal services",
+                    "Document verification",
+                    "Photo capture services",
+                    
+                ]
+            },
+            {
+                title: "Online Visa (E-Channel)",
+                icon: "fas fa-globe",
+                description: "Efficient online visa processing through the UAE government's E-Channel system. We handle all digital formalities for entry permits, visa status changes, and residency applications.",
+                features: [
+                    "Entry permit applications",
+                    "Visa status change processing",
+                    "Residency application filing",
+                    "Application tracking"
+                    
+                ]
+            },
+            {
+                title: "Legal & Normal Translations",
+                icon: "fas fa-language",
+                description: "Certified translation services for legal documents, personal certificates, and business documents between Arabic and English. Our translations are accepted by all UAE government authorities.",
+                features: [
+                    "Certified legal translations",
+                    "Personal document translations",
+                    "Business contract translations",
+                    "Notarization services",
+                   
+                ]
+            },
+            {
+                title: "Certificate Attestations",
+                icon: "fas fa-certificate",
+                description: "End-to-end attestation services for educational certificates, marriage certificates, birth certificates, and commercial documents.",
+                features: [
+                    "Educational certificate attestation",
+                    "Marriage certificate attestation",
+                    "Birth certificate attestation",
+                    "Commercial document attestation",
+                    "MOFA attestation"
+                   
+                ]
+            },
+            {
+                title: "Trade License",
+                icon: "fas fa-file-contract",
+                description: "Comprehensive support for trade license services including new applications, renewals, modifications, and cancellation. We handle all documentation for commercial and professional licenses.",
+                features: [
+                    "New trade license applications",
+                    "License renewal services",
+                    "License amendment requests",
+                    "License cancellation processing",
+                    "Activity addition services",
+                    "Partner modification assistance",
+                    "Commercial name reservation"
+                ]
+            },
+            {
+                title: "Letters Typing",
+                icon: "fas fa-envelope",
+                description: "Professional typing of official correspondence in both Arabic and English. We prepare formal letters for government departments, private companies, and personal requirements.",
+                features: [
+                    "Government department letters",
+                    "Employment-related letters",
+                    "Personal declaration letters",
+                    "Arabic and English versions",
+                    "Mutual agreements"
+                ]
+            },
+            {
+                title: "Traffic Department",
+                icon: "fas fa-car",
+                description: "Complete assistance with all traffic department services including vehicle registration (mulkia), driving license applications, traffic fines payment, and vehicle ownership transfer.",
+                features: [
+                    "Vehicle registration (mulkia)",
+                    "Driving license applications",
+                    "Traffic fines payment",
+                    "Vehicle ownership transfer",
+                    "International driving permits",
+                    "Driving file opening",
+                    "Driving license renewal"
+                ]
+            },
+            {
+                title: "Daman Insurance",
+                icon: "fas fa-heartbeat",
+                description: "Insurance services through Daman, the UAE's leading health insurance provider. We assist with company plans, domestic worker insurance, and Aounak plans.",
+                features: [
+                    "Corporate health insurance",
+                    "Family health insurance",
+                    "Domestic worker insurance",
+                    "Aounak insurance plans",
+                    "Policy renewal services"
+                  
+                ]
+            },
+            {
+                title: "Moi complaint Registration",
+                icon: "fas fa-gavel",
+                description: "Moi complaint Registration ",
+                features: [
+                    "Moi complaint registration"
+                    
+                ]
+            },
+            {
+                title: "Wakala (POA)",
+                icon: "fas fa-handshake",
+                description: "Power of Attorney (Wakala) services including document preparation, notarization, and court registration. We handle both general and specific POAs for personal and business purposes.",
+                features: [
+                    "General Power of Attorney",
+                    "Specific Power of Attorney",
+                    "Notary public services",
+                    "Court registration",
+                    "Document translation",
+                    "Vehicle transfer POA"
+                    
+                ]
+            },
+            {
+                title: "Civil Defense",
+                icon: "fas fa-fire-extinguisher",
+                description: "Assistance with all Civil Defense requirements including company fire safety certificates, vehicle permits, and Hasantuk (home safety device) registration and renewal services.",
+                features: [
+                    "Company fire safety certificates",
+                    "Vehicle fire safety permits",
+                    "Hasantuk registration",
+                    "Renewal services",
+                    "Document preparation",
+                    
+                ]
+            },
+            {
+                title: "Tamm Services",
+                icon: "fas fa-laptop",
+                description: "Support for Tamm, Abu Dhabi's government digital services platform. We assist with document requests, service applications, payment processing.",
+                features: [
+                    "Document request assistance",
+                    "Payment processing",
+                    "Status tracking"
+                    
+                ]
+            }
+        ];
+
         // Page navigation
         function showHomePage() {
             document.getElementById('homePage').style.display = 'block';
@@ -1026,6 +1354,7 @@
             document.querySelector('.nav-btn:nth-child(1)').classList.add('active');
             document.querySelector('.nav-btn:nth-child(2)').classList.remove('active');
             document.querySelector('.nav-btn:nth-child(3)').classList.remove('active');
+            updateStatus(); // Update status when returning to home
         }
         
         function showTimetablePage() {
@@ -1035,6 +1364,7 @@
             document.querySelector('.nav-btn:nth-child(1)').classList.remove('active');
             document.querySelector('.nav-btn:nth-child(2)').classList.remove('active');
             document.querySelector('.nav-btn:nth-child(3)').classList.add('active');
+            updateStatus(); // Update status when opening timetable
         }
         
         function showServicesPage() {
@@ -1046,6 +1376,43 @@
             document.querySelector('.nav-btn:nth-child(3)').classList.remove('active');
         }
         
+        // Show service detail modal
+        function showServiceDetail(serviceId) {
+            const service = serviceDetails[serviceId];
+            const modal = document.getElementById('serviceModal');
+            
+            document.getElementById('modalTitle').textContent = service.title;
+            document.getElementById('modalIcon').className = `service-modal-icon ${service.icon}`;
+            document.getElementById('modalDescription').textContent = service.description;
+            
+            // Clear existing features
+            const featuresList = document.getElementById('modalFeatures');
+            featuresList.innerHTML = '';
+            
+            // Add new features
+            service.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            // Show the modal
+            modal.style.display = 'flex';
+        }
+        
+        // Close service detail modal
+        function closeServiceModal() {
+            document.getElementById('serviceModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            const modal = document.getElementById('serviceModal');
+            if (event.target === modal) {
+                closeServiceModal();
+            }
+        };
+
         // Add today class to current day
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const today = new Date().getDay();
@@ -1073,6 +1440,145 @@
         decorations.forEach((dec, index) => {
             dec.style.animationDelay = `${index * 0.5}s`;
         });
+        
+        // Business hours configuration (in UAE time UTC+4)
+        const businessHours = {
+            Monday: { sessions: [{ start: 9, end: 14 }, { start: 16.5, end: 21.5 }] },
+            Tuesday: { sessions: [{ start: 9, end: 14 }, { start: 16.5, end: 21.5 }] },
+            Wednesday: { sessions: [{ start: 9, end: 14 }, { start: 16.5, end: 21.5 }] },
+            Thursday: { sessions: [{ start: 9, end: 14 }, { start: 16.5, end: 21.5 }] },
+            Friday: { sessions: [{ start: 9, end: 12 }, { start: 16.5, end: 21.5 }] },
+            Saturday: { sessions: [{ start: 9, end: 14 }, { start: 16.5, end: 21.5 }] },
+            Sunday: { closed: true }
+        };
+        
+        // Function to determine if business is open
+        function isBusinessOpen() {
+            const now = new Date();
+            // Convert to UAE time (UTC+4)
+            const uaeOffset = 4 * 60; // minutes
+            const localOffset = now.getTimezoneOffset(); // in minutes
+            const uaeTime = new Date(now.getTime() + (uaeOffset + localOffset) * 60000);
+            
+            const currentDay = days[uaeTime.getDay()];
+            const currentHour = uaeTime.getHours() + uaeTime.getMinutes() / 60;
+            
+            // Check if today is Sunday
+            if (businessHours[currentDay].closed) {
+                return { 
+                    isOpen: false, 
+                    message: "Closed today", 
+                    nextOpening: "Opens tomorrow at 9 AM"
+                };
+            }
+            
+            const sessions = businessHours[currentDay].sessions;
+            let nextOpening = null;
+            
+            // Check current sessions
+            for (const session of sessions) {
+                if (currentHour >= session.start && currentHour < session.end) {
+                    // Business is currently open
+                    return { 
+                        isOpen: true, 
+                        message: `Open now • Closes at ${formatTime(session.end)}`,
+                        nextClosing: session.end
+                    };
+                }
+            }
+            
+            // Find next session today
+            for (const session of sessions) {
+                if (currentHour < session.start) {
+                    nextOpening = session.start;
+                    break;
+                }
+            }
+            
+            if (nextOpening) {
+                return { 
+                    isOpen: false, 
+                    message: `Closed now • Opens at ${formatTime(nextOpening)}`,
+                    nextOpening: nextOpening
+                };
+            }
+            
+            // Find next opening in future days
+            for (let i = 1; i <= 7; i++) {
+                const nextDayIndex = (uaeTime.getDay() + i) % 7;
+                const nextDay = days[nextDayIndex];
+                
+                if (!businessHours[nextDay].closed) {
+                    const nextSession = businessHours[nextDay].sessions[0];
+                    return { 
+                        isOpen: false, 
+                        message: `Closed now • Opens ${i === 1 ? 'tomorrow' : nextDay} at ${formatTime(nextSession.start)}`,
+                        nextOpening: nextSession.start
+                    };
+                }
+            }
+            
+            return { 
+                isOpen: false, 
+                message: "Closed now", 
+                nextOpening: "See opening hours"
+            };
+        }
+        
+        // Format time to 12-hour format with AM/PM
+        function formatTime(time) {
+            const hours = Math.floor(time);
+            const minutes = Math.round((time - hours) * 60);
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            let displayHours = hours % 12;
+            if (displayHours === 0) displayHours = 12;
+            
+            return `${displayHours}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+        }
+        
+        // Update the status display
+        function updateStatus() {
+            const statusInfo = isBusinessOpen();
+            const statusIndicator = document.getElementById('statusIndicator');
+            const statusMessage = document.getElementById('statusMessage');
+            const timetableStatusBar = document.getElementById('timetableStatusBar');
+            
+            if (statusInfo.isOpen) {
+                statusIndicator.className = "status-indicator open-status";
+                statusIndicator.innerHTML = '<span class="status-dot open-dot"></span> Open now';
+                statusMessage.textContent = `Closes at ${statusInfo.nextClosing ? formatTime(statusInfo.nextClosing) : '9:30 PM'} today`;
+                
+                if (timetableStatusBar) {
+                    timetableStatusBar.className = "timetable-status-bar";
+                    timetableStatusBar.innerHTML = `
+                        <h3>
+                            <span class="status-dot open-dot"></span>
+                            <span>Open now</span>
+                        </h3>
+                        <p>Closes at ${statusInfo.nextClosing ? formatTime(statusInfo.nextClosing) : '9:30 PM'} today</p>
+                    `;
+                }
+            } else {
+                statusIndicator.className = "status-indicator closed-status";
+                statusIndicator.innerHTML = '<span class="status-dot closed-dot"></span> Closed now';
+                statusMessage.textContent = statusInfo.message.replace('Closed now • ', '');
+                
+                if (timetableStatusBar) {
+                    timetableStatusBar.className = "timetable-status-bar closed";
+                    timetableStatusBar.innerHTML = `
+                        <h3>
+                            <span class="status-dot closed-dot"></span>
+                            <span>Closed now</span>
+                        </h3>
+                        <p>${statusInfo.message.replace('Closed now • ', '')}</p>
+                    `;
+                }
+            }
+        }
+        
+        // Initialize and update status every minute
+        updateStatus();
+        setInterval(updateStatus, 60000); // Update every minute
     </script>
 </body>
 </html>
